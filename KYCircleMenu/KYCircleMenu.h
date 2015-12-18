@@ -24,11 +24,11 @@
 
 
 @interface KYCircleMenu : UIViewController {
-  UIView   * menu_;
-  UIButton * centerButton_;
-  BOOL       isOpening_;
-  BOOL       isInProcessing_;
-  BOOL       isClosed_;
+    UIView   * menu_;
+    UIButton * centerButton_;
+    BOOL       isOpening_;
+    BOOL       isInProcessing_;
+    BOOL       isClosed_;
 }
 
 @property (nonatomic, strong) UIView   * menu;
@@ -36,6 +36,9 @@
 @property (nonatomic, assign) BOOL       isOpening;
 @property (nonatomic, assign) BOOL       isInProcessing;
 @property (nonatomic, assign) BOOL       isClosed;
+
+
+@property(nonatomic,strong) void (^colseCompletion)();
 
 /*! Designated initializer for KYCircleMenu.
  *
@@ -80,5 +83,6 @@
 /*! Recover all buttons to normal position
  */
 - (void)recoverToNormalStatus;
+
 
 @end
