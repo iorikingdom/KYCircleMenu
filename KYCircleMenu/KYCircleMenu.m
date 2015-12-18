@@ -214,6 +214,11 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
     // Close center menu
     //  [self _closeCenterMenuView:nil];
     shouldRecoverToNormalStatusWhenViewWillAppear_ = YES;
+    
+    if (_actionCompletion) {
+        _actionCompletion(sender);
+    }
+
 }
 
 // Push View Controller

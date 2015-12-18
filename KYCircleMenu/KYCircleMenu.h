@@ -40,6 +40,9 @@
 
 @property(nonatomic,strong) void (^colseCompletion)();
 
+@property(nonatomic,strong) void (^actionCompletion)(id sender);
+
+
 /*! Designated initializer for KYCircleMenu.
  *
  * \param buttonCount Count of buttons around (1<= x <=6)
