@@ -17,6 +17,8 @@
     NSString * centerButtonImageName_;
     NSString * centerButtonBackgroundImageName_;
     
+    NSArray *titles_;
+    
     BOOL shouldRecoverToNormalStatusWhenViewWillAppear_;
 }
 
@@ -73,6 +75,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
                    centerButtonSize:(CGFloat)centerButtonSize
               centerButtonImageName:(NSString *)centerButtonImageName
     centerButtonBackgroundImageName:(NSString *)centerButtonBackgroundImageName
+                             titles:(NSArray *)titles
 {
     if (self = [self init]) {
         buttonCount_                     = buttonCount;
@@ -88,6 +91,8 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         minBounceOfTriangleHypotenuse_ = defaultTriangleHypotenuse_ - 12.f;
         maxBounceOfTriangleHypotenuse_ = defaultTriangleHypotenuse_ + 12.f;
         maxTriangleHypotenuse_         = kKYCircleMenuViewHeight * .5f;
+        
+        titles_ = titles;
         
         // Buttons' origin frame
         CGFloat originX = (menuSize_ - centerButtonSize_) * .5f;
@@ -156,7 +161,9 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         [button setOpaque:NO];
         [button setTag:i];
         imageName = [NSString stringWithFormat:self.buttonImageNameFormat, button.tag];
-        [button setImage:[UIImage imageNamed:imageName]
+        [button setTitle:titles_[i-1] forState:UIControlStateNormal];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(14, 0, 0, 0)];
+        [button setBackgroundImage:[UIImage imageNamed:imageName]
                 forState:UIControlStateNormal];
         [button addTarget:self action:@selector(runButtonActions:) forControlEvents:UIControlEventTouchUpInside];
         [self.menu addSubview:button];

@@ -61,7 +61,8 @@
               buttonImageNameFormat:(NSString *)buttonImageNameFormat
                    centerButtonSize:(CGFloat)centerButtonSize
               centerButtonImageName:(NSString *)centerButtonImageName
-    centerButtonBackgroundImageName:(NSString *)centerButtonBackgroundImageName;
+    centerButtonBackgroundImageName:(NSString *)centerButtonBackgroundImageName
+                             titles:(NSArray *)titles;
 
 /*! Run action for buttons around.
  *  Override this message to do custom jobs,

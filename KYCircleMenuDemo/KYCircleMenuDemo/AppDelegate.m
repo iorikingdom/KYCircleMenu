@@ -31,7 +31,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                 buttonImageNameFormat:kKYICircleMenuButtonImageNameFormat
                                      centerButtonSize:kKYCircleMenuCenterButtonSize
                                 centerButtonImageName:kKYICircleMenuCenterButton
-                      centerButtonBackgroundImageName:kKYICircleMenuCenterButtonBackground];
+                      centerButtonBackgroundImageName:kKYICircleMenuCenterButtonBackground
+                                              titles:@[@"菜单1",@"菜单2",@"菜单3",@"菜单4",@"菜单5",@"菜单6"]];
   
   // Set the cricle menu vc as the root vc
   (void)[navigationController initWithRootViewController:circleMenuViewController];
