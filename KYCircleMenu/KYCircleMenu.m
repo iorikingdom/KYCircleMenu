@@ -338,7 +338,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
                          isOpening_      = NO;
                          isInProcessing_ = NO;
                          
-                         if(_colseCompletion == nil)
+                         if(_colseCompletion != nil)
                          {
                              _colseCompletion();
                          }
