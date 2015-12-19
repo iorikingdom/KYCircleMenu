@@ -32,6 +32,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                      centerButtonSize:kKYCircleMenuCenterButtonSize
                                 centerButtonImageName:kKYICircleMenuCenterButton
                       centerButtonBackgroundImageName:kKYICircleMenuCenterButtonBackground
+                                            textColor:[UIColor blueColor]
                                               titles:@[@"菜单1",@"菜单2",@"菜单3",@"菜单4",@"菜单5",@"菜单6"]];
   
   // Set the cricle menu vc as the root vc

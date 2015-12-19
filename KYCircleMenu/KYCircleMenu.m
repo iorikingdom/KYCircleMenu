@@ -19,6 +19,8 @@
     
     NSArray *titles_;
     
+    UIColor *textColor_;
+    
     BOOL shouldRecoverToNormalStatusWhenViewWillAppear_;
 }
 
@@ -75,6 +77,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
                    centerButtonSize:(CGFloat)centerButtonSize
               centerButtonImageName:(NSString *)centerButtonImageName
     centerButtonBackgroundImageName:(NSString *)centerButtonBackgroundImageName
+                          textColor:(UIColor *)textColor
                              titles:(NSArray *)titles
 {
     if (self = [self init]) {
@@ -93,6 +96,8 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         maxTriangleHypotenuse_         = kKYCircleMenuViewHeight * .5f;
         
         titles_ = titles;
+        
+        textColor_ = textColor;
         
         // Buttons' origin frame
         CGFloat originX = (menuSize_ - centerButtonSize_) * .5f;
@@ -162,7 +167,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         [button setTag:i];
         imageName = [NSString stringWithFormat:self.buttonImageNameFormat, button.tag];
         [button setTitle:titles_[i-1] forState:UIControlStateNormal];
-        [button setTitleEdgeInsets:UIEdgeInsetsMake(14, 0, 0, 0)];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(25, 0, 0, 0)];
         [button setBackgroundImage:[UIImage imageNamed:imageName]
                 forState:UIControlStateNormal];
         [button addTarget:self action:@selector(runButtonActions:) forControlEvents:UIControlEventTouchUpInside];

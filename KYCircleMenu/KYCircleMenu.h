@@ -62,6 +62,7 @@
                    centerButtonSize:(CGFloat)centerButtonSize
               centerButtonImageName:(NSString *)centerButtonImageName
     centerButtonBackgroundImageName:(NSString *)centerButtonBackgroundImageName
+                          textColor:(UIColor *)textColor
                              titles:(NSArray *)titles;
 
 /*! Run action for buttons around.
