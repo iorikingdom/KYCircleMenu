@@ -167,7 +167,8 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         [button setTag:i];
         imageName = [NSString stringWithFormat:self.buttonImageNameFormat, button.tag];
         [button setTitle:titles_[i-1] forState:UIControlStateNormal];
-        [button setTitleEdgeInsets:UIEdgeInsetsMake(25, 0, 0, 0)];
+        [button setTitleColor:textColor_ forState:UIControlStateNormal];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(30, 0, 0, 0)];
         [button setBackgroundImage:[UIImage imageNamed:imageName]
                 forState:UIControlStateNormal];
         [button addTarget:self action:@selector(runButtonActions:) forControlEvents:UIControlEventTouchUpInside];
