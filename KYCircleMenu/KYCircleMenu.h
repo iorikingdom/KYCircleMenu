@@ -81,6 +81,8 @@
  */
 - (void)pushViewController:(id)viewController;
 
+- (void)pushViewController:(id)viewController navigationController:(UINavigationController *)navigationController;
+
 /*! Open menu to show all buttons around
  */
 - (void)open;

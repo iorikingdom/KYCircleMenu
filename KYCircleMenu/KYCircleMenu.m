@@ -238,6 +238,12 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
 // Push View Controller
 - (void)pushViewController:(id)viewController
 {
+    [self pushViewController:viewController navigationController:self.navigationController];
+}
+
+// Push View Controller
+- (void)pushViewController:(id)viewController navigationController:(UINavigationController *)navigationController
+{
     [UIView animateWithDuration:.3f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseInOut
@@ -255,7 +261,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
                           }*/
                      }
                      completion:^(BOOL finished) {
-                         [self.navigationController pushViewController:viewController animated:YES];
+                         [navigationController pushViewController:viewController animated:YES];
                      }];
 }
 
