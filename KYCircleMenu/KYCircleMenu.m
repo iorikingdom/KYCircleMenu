@@ -182,10 +182,19 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
                (CGRectGetHeight(self.view.frame) - centerButtonSize_) * .5f,
                centerButtonSize_, centerButtonSize_);
     centerButton_ = [[UIButton alloc] initWithFrame:mainButtonFrame];
-    [centerButton_ setBackgroundImage:[UIImage imageNamed:self.centerButtonBackgroundImageName]
+    
+    if(self.centerButtonBackgroundImageName)
+    {
+        [centerButton_ setBackgroundImage:[UIImage imageNamed:self.centerButtonBackgroundImageName]
                              forState:UIControlStateNormal];
-    [centerButton_ setImage:[UIImage imageNamed:self.centerButtonImageName]
+    }
+    
+    if(self.centerButtonImageName)
+    {
+        [centerButton_ setImage:[UIImage imageNamed:self.centerButtonImageName]
                    forState:UIControlStateNormal];
+    }
+    
     [centerButton_ addTarget:self
                       action:@selector(_toggle:)
             forControlEvents:UIControlEventTouchUpInside];
