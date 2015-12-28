@@ -87,6 +87,8 @@
  */
 - (void)open;
 
+-(void)close;
+
 /*! Recover all buttons to normal position
  */
 - (void)recoverToNormalStatus;

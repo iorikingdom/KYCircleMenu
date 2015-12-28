@@ -236,7 +236,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
 #endif
     // Close center menu
     //  [self _closeCenterMenuView:nil];
-    shouldRecoverToNormalStatusWhenViewWillAppear_ = YES;
+//    shouldRecoverToNormalStatusWhenViewWillAppear_ = YES;
     
     if (_actionCompletion) {
         _actionCompletion(sender);
@@ -346,6 +346,11 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
 - (void)_toggle:(id)sender
 {
     (isClosed_ ? [self open] : [self _close:nil]);
+}
+
+-(void)close
+{
+    [self _toggle:nil];
 }
 
 // Close menu to hide all buttons around
