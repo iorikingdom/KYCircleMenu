@@ -253,25 +253,27 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
 // Push View Controller
 - (void)pushViewController:(id)viewController navigationController:(UINavigationController *)navigationController
 {
-    [UIView animateWithDuration:.3f
-                          delay:0.f
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         // Slide away buttons in center view & hide them
-                         [self _updateButtonsLayoutWithTriangleHypotenuse:maxTriangleHypotenuse_];
-                         [self.menu setAlpha:0.f];
-                         
-                         /*/ Show Navigation Bar
-                          [self.navigationController setNavigationBarHidden:NO];
-                          CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
-                          if (navigationBarFrame.origin.y < 0) {
-                          navigationBarFrame.origin.y = 0;
-                          [self.navigationController.navigationBar setFrame:navigationBarFrame];
-                          }*/
-                     }
-                     completion:^(BOOL finished) {
-                         [navigationController pushViewController:viewController animated:YES];
-                     }];
+    [navigationController pushViewController:viewController animated:YES];
+
+//    [UIView animateWithDuration:.3f
+//                          delay:0.f
+//                        options:UIViewAnimationOptionCurveEaseInOut
+//                     animations:^{
+//                         // Slide away buttons in center view & hide them
+//                         [self _updateButtonsLayoutWithTriangleHypotenuse:maxTriangleHypotenuse_];
+//                         [self.menu setAlpha:0.f];
+//                         
+//                         /*/ Show Navigation Bar
+//                          [self.navigationController setNavigationBarHidden:NO];
+//                          CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
+//                          if (navigationBarFrame.origin.y < 0) {
+//                          navigationBarFrame.origin.y = 0;
+//                          [self.navigationController.navigationBar setFrame:navigationBarFrame];
+//                          }*/
+//                     }
+//                     completion:^(BOOL finished) {
+//                         [navigationController pushViewController:viewController animated:YES];
+//                     }];
 }
 
 // Open center menu view
