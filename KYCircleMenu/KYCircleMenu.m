@@ -19,7 +19,7 @@
     
     NSArray *titles_;
     
-    UIColor *textColor_;
+    NSArray *textColors_;
     
     BOOL shouldRecoverToNormalStatusWhenViewWillAppear_;
 }
@@ -77,7 +77,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
                    centerButtonSize:(CGFloat)centerButtonSize
               centerButtonImageName:(NSString *)centerButtonImageName
     centerButtonBackgroundImageName:(NSString *)centerButtonBackgroundImageName
-                          textColor:(UIColor *)textColor
+                          textColors:(NSArray *)textColors
                              titles:(NSArray *)titles
 {
     if (self = [self init]) {
@@ -97,7 +97,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         
         titles_ = titles;
         
-        textColor_ = textColor;
+        textColors_ = textColors;
         
         // Buttons' origin frame
         CGFloat originX = (menuSize_ - centerButtonSize_) * .5f;
@@ -168,7 +168,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         imageName = [NSString stringWithFormat:self.buttonImageNameFormat, button.tag];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         [button setTitle:titles_[i-1] forState:UIControlStateNormal];
-        [button setTitleColor:textColor_ forState:UIControlStateNormal];
+        [button setTitleColor:textColors_[i-1] forState:UIControlStateNormal];
         [button setTitleEdgeInsets:UIEdgeInsetsMake(35, 0, 0, 0)];
         [button setBackgroundImage:[UIImage imageNamed:imageName]
                 forState:UIControlStateNormal];
