@@ -159,6 +159,16 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
     [menu_ setAlpha:0.f];
     [self.view addSubview:menu_];
     
+    CGFloat fontSize = 15;
+    NSString  *language = [NSLocale preferredLanguages].firstObject;
+    NSMutableArray *components =
+    [NSMutableArray arrayWithArray:[language componentsSeparatedByString:@"-"]];
+
+    if([[components.firstObject lowercaseString] isEqualToString:@"en"])
+    {
+        fontSize = 13;
+    }
+    
     // Add buttons to |ballMenu_|, set it's origin frame to center
     NSString * imageName = nil;
     for (int i = 1; i <= buttonCount_; ++i) {
