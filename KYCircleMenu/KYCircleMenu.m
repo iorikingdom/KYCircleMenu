@@ -176,7 +176,7 @@ centerButtonBackgroundImageName = centerButtonBackgroundImageName_;
         [button setOpaque:NO];
         [button setTag:i];
         imageName = [NSString stringWithFormat:self.buttonImageNameFormat, button.tag];
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
         [button setTitle:titles_[i-1] forState:UIControlStateNormal];
         [button setTitleColor:textColors_[i-1] forState:UIControlStateNormal];
         [button setTitleEdgeInsets:UIEdgeInsetsMake(35, 0, 0, 0)];
